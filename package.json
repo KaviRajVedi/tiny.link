@@ -1,0 +1,24 @@
+{
+  "name": "url-shortener-app",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "dev": "concurrently \"npm run dev --prefix frontend\" \"npm run dev --prefix backend\"",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "autoprefixer": "^10.4.20",
+    "concurrently": "^9.1.2",
+    "postcss": "^8.5.1",
+    "tailwindcss": "^4.0.4"
+  },
+  "dependencies": {
+    "framer-motion": "^12.4.2",
+    "lucide-react": "^0.475.0",
+    "react-icons": "^5.4.0"
+  }
+}
