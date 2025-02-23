@@ -1,0 +1,26 @@
+datasource db {
+  provider = "postgresql" // Use "mysql" or "sqlite" if applicable
+  url      = env("DATABASE_URL")
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+model User {
+  id       Int    @id @default(autoincrement())
+  username String @unique
+  password String
+  urls     Url[]
+}
+
+model Url {
+  id          Int      @id @default(autoincrement())
+  originalUrl String
+  shortCode   String   @unique
+  clicks      Int      @default(0)
+  expiration  DateTime
+  createdAt   DateTime @default(now())
+  userId      Int
+  user        User     @relation(fields: [userId], references: [id])
+}
